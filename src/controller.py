@@ -30,12 +30,12 @@ class ConfigRepositoryController:
     def export_output(task: ConfigPipeline):
         GITHUB_OUTPUT = os.getenv('GITHUB_OUTPUT')
         with open(GITHUB_OUTPUT, "a") as myfile:
-        for key in task.config:
-            value = task.config[key]
-            # export_command = "echo \"{" + key + "}={" + str(value) + "}\" >> $GITHUB_OUTPUT"
-            # os.environ[key] = str(value)
-            myfile.write(f"{key}={str(value)}\n")
-            # print(f"{key}={str(value)}")
-            # print(export_command)
-            # print(export_command)
-            # print(f"::set-output name={key}::{str(value)}")
+            for key in task.config:
+                value = task.config[key]
+                # export_command = "echo \"{" + key + "}={" + str(value) + "}\" >> $GITHUB_OUTPUT"
+                # os.environ[key] = str(value)
+                myfile.write(f"{key}={str(value)}\n")
+                # print(f"{key}={str(value)}")
+                # print(export_command)
+                # print(export_command)
+                # print(f"::set-output name={key}::{str(value)}")

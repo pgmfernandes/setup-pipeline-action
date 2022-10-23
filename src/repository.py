@@ -2,7 +2,7 @@ import base64
 import requests
 import urllib3
 
-from src.utility import CyberConstants
+from utility import CyberConstants
 
 
 class CyberConfigRepositoryManager:

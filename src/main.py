@@ -26,3 +26,4 @@ if __name__ == "__main__":
         init()
     except Exception as err:
         print("::error file=main.py::" + err.__str__())
+        raise err

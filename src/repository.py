@@ -38,6 +38,8 @@ class CyberConfigRepositoryManager:
             return config
         elif response.status_code == 401:
             print("::debug::Github did not authorized this request. You probably set a  not valid Github PAT.")
+            print("::error::Github did not authorized this request. You probably set a  not valid Github PAT.")
+            exit(1)
         elif response.status_code == 404:
-            print("::debug::Repository not found.")
+            print("::debug::Repository config file not found.")
         return None

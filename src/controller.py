@@ -29,9 +29,9 @@ class ConfigRepositoryController:
     @staticmethod
     def export_output(task: ConfigPipeline):
         GITHUB_OUTPUT = os.getenv('GITHUB_OUTPUT')
-        with open(GITHUB_OUTPUT, "a") as myfile:
+        with open(GITHUB_OUTPUT, "a") as github_env_variables:
             for key in task.config:
                 value = task.config[key]
-                myfile.write(f"{key}={str(value)}\n")
+                github_env_variables.write(f"{key}={str(value)}\n")
                 print(f"{key}={str(value)}")
 

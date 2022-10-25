@@ -37,6 +37,7 @@ runs:
     - name: Test of inputs
       run: |
         echo "Default value ${{ inputs.TESTE.default }}"
+      shell: bash
     - name: Executing action
       id: executing_action
       run: | 

@@ -4,6 +4,9 @@ inputs:
   GH_TOKEN:
     description: 'A Github PAT'
     required: true
+  TESTE:
+    required: false
+    default: TTTTTTTT
 
 outputs:
   SEMGREP_CHECK:
@@ -31,6 +34,9 @@ runs:
     - run: pip install -r $GITHUB_ACTION_PATH/requirements.txt
       shell: bash
       name: Installing dependencies
+    - name: Test of inputs
+      run: |
+        echo "Default value ${{ inputs.TESTE.default }}"
     - name: Executing action
       id: executing_action
       run: | 
